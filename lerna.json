@@ -2,8 +2,7 @@
   "packages": [
     "packages/*"
   ],
-  "npmClient": "yarn",
-  "useWorkspaces": true,
+  "npmClient": "pnpm",
   "stream": true,
   "version": "1.0.0"
 }

@@ -37,7 +37,7 @@
 
     const connectButton = document.querySelector('button.connect')
     const sendButton = document.querySelector('button.getPubKey')
-    const signButton = document.querySelector('button.signPsbt')
+    const signButton = document.querySelector('button.signTx')
 
     connectButton.addEventListener('click', connect)
     sendButton.addEventListener('click', getPubKey)
@@ -59,7 +59,7 @@
         const response = await ethereum.request({
           method: 'wallet_invokeSnap',
           params: [snapId, {
-            method: 'btc_getPublicExtendedKey',
+            method: 'hbar_getPublicExtendedKey',
             params: {
               network: "test"
             }
@@ -73,7 +73,7 @@
       }
     }
 
-    async function signPsbt () {
+    async function signTx () {
       try {
         const response = await ethereum.request({
           method: 'wallet_invokeSnap',

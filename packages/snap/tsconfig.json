@@ -6,7 +6,7 @@
       "baseUrl": "./",
       "outDir": "./lib",
       "paths": {
-        "*": ["src/*", "node_modules/*"]
+        "@/*": ["src/*"]
       }
     }
   }

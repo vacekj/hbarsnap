@@ -34,7 +34,7 @@ const result: string = await ethereum.request({
     params: [
       "npm:btcsnap",
       {
-        method: 'btc_getPublicExtendedKey',
+        method: 'hbar_getPublicExtendedKey',
         params: {
           network: "Main" // for testnet use "Test" ,
         },

@@ -1,40 +1,27 @@
-export interface GetPublicExtendedKeyRequest{
-    method: "btc_getPublicExtendedKey";
-    params: {
-      network: BitcoinNetwork
-    }
+export interface GetPublicExtendedKeyRequest {
+  method: "hbar_getPublicExtendedKey";
 }
 
-export interface SignPsbt{
-  method: "btc_signPsbt";
+export interface SignTx {
+  method: "hbar_signTx";
   params: {
-    psbt: string,
-    network: BitcoinNetwork
-  }
+    recipient: string;
+    amount: number;
+  };
 }
 
-export type MetamaskBTCRpcRequest = GetPublicExtendedKeyRequest | SignPsbt
+export type MetamaskHBARRpcRequest = GetPublicExtendedKeyRequest | SignTx;
 
-export type BTCMethodCallback = (
+export type HBarMethodCallback = (
   originString: string,
-  requestObject: MetamaskBTCRpcRequest
+  requestObject: MetamaskHBARRpcRequest
 ) => Promise<unknown>;
 
 export interface Wallet {
-  registerRpcMessageHandler: (fn: BTCMethodCallback) => unknown;
-  request(options: {method: string; params?: unknown[]}): Promise<unknown>;
+  registerRpcMessageHandler: (fn: HBarMethodCallback) => unknown;
+
+  request(options: { method: string; params?: unknown[] }): Promise<unknown>;
 }
-
-
-export enum ScriptType {
-    P2PKH = "P2PKH",
-}
-
-export enum BitcoinNetwork {
-  Main = "main",
-  Test = "test",
-}
-
 
 export interface BIP44CoinTypeNode {
   /**

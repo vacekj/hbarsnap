@@ -1,12 +1,12 @@
 {
   "name": "btcsnap",
   "version": "0.4.0",
-  "description": "btcsnap: Metamask snap to manage your bitcoin",
-  "author": "aaronisme <aarondongchen@gmail.com>",
+  "description": "hbarsnap: Metamask snap to manage your Hbar",
+  "author": "atris <atriscrypto@protonmail.com>, aaronisme <aarondongchen@gmail.com>",
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KeystoneHQ/btcsnap"
+    "url": "https://github.com/vacekj/hbarsnap"
   },
   "license": "ISC",
   "main": "dist/index.js",
@@ -33,9 +33,10 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
+    "@hashgraph/hethers": "^1.2.2",
+    "@hashgraph/sdk": "^2.18.3",
     "@metamask/snaps-cli": "^0.18.0",
-    "bip32": "^2.0.6",
-    "bitcoinjs-lib": "^6.0.1"
+    "bip32": "^2.0.6"
   },
   "publishConfig": {
     "access": "public",
